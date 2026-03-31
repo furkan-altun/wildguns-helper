@@ -913,6 +913,24 @@
 
     const intervalInput = document.getElementById('wg-interval');
     if (intervalInput) intervalInput.value = appState.intervalSecs;
+
+    // Alarm modu UI'a geri yükle
+    const modeRadio = document.querySelector(`input[name="wg-alarm-mode"][value="${appState.alarmMode}"]`);
+    if (modeRadio) {
+      modeRadio.checked = true;
+      _updateAlarmModeVisibility(appState.alarmMode);
+    }
+
+    // Threshold değerlerini UI'a geri yükle
+    const grandTarget = document.getElementById('wg-grand-target');
+    if (grandTarget) grandTarget.value = appState.thresholds.grandTotal || 0;
+    const resources = ['wood', 'clay', 'iron', 'food'];
+    resources.forEach(res => {
+      const input = document.getElementById(`wg-threshold-${res}`);
+      if (input) input.value = appState.thresholds[res] || 0;
+    });
+
+    renderProgress(null, null, appState.alarmMode, appState.thresholds, appState.totals);
   }
 
   init();
