@@ -333,7 +333,7 @@
 
   // ─── alarm.js ───────────────────────────────────────────────────────────────
 
-  const DEFAULTS = {(totals, thresholds, alarmMode, alarmFired) {
+  function checkAlarm(totals, thresholds, alarmMode, alarmFired) {
     if (alarmFired) return { triggered: false, alarmFired: true };
     if (alarmMode === 'grand_total') {
       const target = thresholds.grandTotal;
@@ -342,7 +342,6 @@
       return { triggered: false, alarmFired: false };
     }
     if (alarmMode === 'per_resource') {
-      // 4 kutudaki değerlerin toplamı hedef, grandTotal ile karşılaştır
       const target = (thresholds.wood||0) + (thresholds.clay||0) + (thresholds.iron||0) + (thresholds.food||0);
       if (target <= 0) return { triggered: false, alarmFired: false };
       if (totals.grandTotal >= target) return { triggered: true, alarmFired: true };
