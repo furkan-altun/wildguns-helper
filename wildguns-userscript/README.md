@@ -44,14 +44,15 @@ Tampermonkey userscript olarak çalışır — masaüstü ve mobil tarayıcılar
 
 #### 2. Chrome / Edge için Ek Ayar (Zorunlu)
 
-Chrome ve Edge'de Tampermonkey'in script çalıştırabilmesi için iki ayar açılmalıdır:
+Chrome ve Edge'de Tampermonkey'in script çalıştırabilmesi için birkaç ayar açılmalıdır:
 
 1. Tarayıcı adres çubuğuna yaz: `chrome://extensions`
 2. Sağ üstteki **"Developer mode"** (Geliştirici modu) anahtarını **Açık** yap
 3. Tampermonkey'i bul → **Detaylar** butonuna tıkla
 4. **"Allow User Scripts"** seçeneğini **Açık** yap
+5. **"Allow access to file URLs"** seçeneğini **Açık** yap
 
-> ⚠️ Her iki adım da yapılmazsa script çalışmaz.
+> ⚠️ Bu adımlar yapılmazsa script çalışmaz.
 
 ---
 
@@ -179,14 +180,15 @@ Works as a Tampermonkey userscript — supported on desktop and mobile browsers.
 
 #### 2. Extra Step for Chrome / Edge (Required)
 
-Chrome and Edge require two additional settings to allow Tampermonkey to run scripts:
+Chrome and Edge require a few additional settings to allow Tampermonkey to run scripts:
 
 1. Type in the address bar: `chrome://extensions`
 2. Enable **"Developer mode"** toggle in the top right corner
 3. Find Tampermonkey → click **Details**
 4. Enable **"Allow User Scripts"**
+5. Enable **"Allow access to file URLs"**
 
-> ⚠️ Both steps are required, otherwise the script will not run.
+> ⚠️ All steps are required, otherwise the script will not run.
 
 ---
 
