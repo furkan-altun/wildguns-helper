@@ -1,1 +1,0 @@
-# Özellik tabanlı testler paketi
